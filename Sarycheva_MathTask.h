@@ -1,7 +1,9 @@
 #ifndef _SURNAME_MATHTASK_H_
 #define _SURNAME_MATHTASK_H_
 
+#include <iostream>
 #include <string>
+
 using namespace std;
 
 // функция контроля вводимых данных
