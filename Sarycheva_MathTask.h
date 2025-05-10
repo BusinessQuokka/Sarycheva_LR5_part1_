@@ -6,20 +6,20 @@
 
 using namespace std;
 
-// функция контроля вводимых данных
 bool UserInput (string input) {
-    //если строка пустая - ввод некорректен
     if (input.empty()) return false;
-    //попытаться
     try {
-        //преобразование введенного значения в тип
         int number = stoi(input);
+        if (number < 0) return false; // Добавляем проверку на отрицательные числа
+        for(char c : input){
+            if(!isdigit(c) && c != '-'){
+                return false; //Проверка на нецифровые символы
+            }
+        }
     }
-    catch (...) // если возникла ошибка в блоке try
-    { return false; }
+    catch (...) { return false; }
     return true;
 }
-
 //метод ввода данных
 void EnterDigit(int& varLink, const string& label) {
     string raw_input;
